@@ -1,0 +1,27 @@
+# Language Settings
+ [en]
+   languageName = "English"
+   contentDir = "content/en"
+   weight = 1
+ [es]
+   languageName = "Español"
+   title = "Massively - Versión Español"
+   contentDir = "content/es"
+   weight = 2
+  [[es.menu.main]]
+    identifier = "generic"
+    name = "Genérica"
+    url = "/es/generica/"
+    weight = 1
+  [[es.menu.main]]
+    identifier = "elements"
+    name = "Elementos"
+    url = "/es/elementos/"
+    weight = 2
+  
+# [fr]
+#   languageName = "Français"
+#   title = "Massively - Version Française"
+#   contentDir = "content/fr"
+#   [fr.params.navigation]
+#     folderName = "essais"

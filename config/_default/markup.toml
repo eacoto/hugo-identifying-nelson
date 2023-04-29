@@ -1,0 +1,19 @@
+## Config for extra markdown features
+[goldmark]
+  [goldmark.extensions]
+    definitionList = true
+    footnote = true
+    linkify = true
+    strikethrough = true
+    table = true
+    taskList = true
+    typographer = true
+  [goldmark.parser]
+    autoHeadingID = true
+    autoHeadingIDType = 'github'
+    [goldmark.parser.attribute]
+      block = true
+      title = true
+      table = true
+  [goldmark.renderer]
+    unsafe = true
