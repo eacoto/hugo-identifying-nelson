@@ -1,6 +1,7 @@
 ---
 title: "The Film"
 date: 2023-05-27T20:59:17-05:00
+#image: "images/bg.jpg"
 draft: true
 ---
 

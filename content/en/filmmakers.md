@@ -4,8 +4,8 @@ date: 2023-05-27T21:38:42-05:00
 draft: true
 ---
 
-## Nelson de Witt / Roberto Coto
-{{< image-text src="/images/filmmaker_nelson.jpg" class= "left" >}}
+### Nelson de Witt / Roberto Coto
+{{< image-text src="/images/filmmakers/filmmaker_nelson.jpg" class= "left" >}}
 
 
 In 1997, Nelson de witt, a 16-year-old adoptee from Boston, Massachusetts, discovered that he had been identified as one Roberto Coto, an infant who disappeared in 1982 after a deadly government raid on three guerrilla safe houses in Tegucigalpa, Honduras.
@@ -20,7 +20,7 @@ Email Nelson : nelson@identifyingnelson.com
 
 
 ### John Younger
-{{< image-text src="/images/filmmaker_john.jpg" class= "right" >}}
+{{< image-text src="/images/filmmakers/filmmaker_john.jpg" class= "right" >}}
 “My favorite explanation about the need to tell stories comes from the historian Wallace Stegner, who wrote, “Any people in a new land may be pardoned for being solicitous about their history; they create it, in a sense, by remembering it.” While Stegner was speaking about 19th Century Mormon Pioneers, I’ve always felt that his words apply equally well to anyone whose truth doesn’t fit neatly into a familiar little box.
 
 I met Nelson as his counselor at a YMCA summer camp in Western Massachusetts. I was trying to keep up with a cabin full of Mighty Midgets before heading off to my first year of college. He was a happy and determined 8-year-old who already was showing his proclivity for being a snappy dresser. One memory that has stuck with me of Nelson the camper is from the Family Visiting Day, when his younger brother Derek grasped around one of Nelson’s fingers and seemed to never let go from the minute he arrived until it was time to leave.

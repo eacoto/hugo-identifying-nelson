@@ -1,7 +1,7 @@
 +++
 title = '2012 – Spring / Release'
 slug = 'post7'
-image = 'images/time_2013.jpg'
+image = 'images/timeline/time_2013.jpg'
 date = "2019-03-18T00:00:00"
 description = 'After members of the Kirschner family read the Huffington Post article Nelson, John, and Margaret Ward were invited to speak at the U. Chicago Robert H. Kirschner, M.D., Memorial Human Rights Lecture Series.'
 disableComments = true
