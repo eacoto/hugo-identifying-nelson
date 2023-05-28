@@ -1,12 +1,13 @@
 # For Pages the .RelPermalink must match the menu .URL 
 # For sections the name/directory must match the menu .Identifier
+
 [[main]]
-  identifier = "generic"
-  name = "Generic Page"
-  url = "/generic/"
-  weight = 20
+  identifier = "Filmmakers"
+  name = "TheFilmmakers"
+  url = "/filmmakers/"
+  weight = 1
 [[main]]
-  identifier = "elements"
-  name = "Elements Reference"
-  url = "/elements/"
-  weight = 50
+  identifier = "podcast"
+  name = "podcast"
+  url = "/es/podcast/"
+  weight = 2

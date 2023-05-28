@@ -2,22 +2,33 @@
  [en]
    languageName = "English"
    contentDir = "content/en"
-   weight = 1
- [es]
-   languageName = "Español"
-   title = "Massively - Versión Español"
-   contentDir = "content/es"
-   weight = 2
-  [[es.menu.main]]
-    identifier = "generic"
-    name = "Genérica"
-    url = "/es/generica/"
+   weight = 1 
+  [[en.menu.main]]
+    identifier = "Filmmakers"
+    name = "TheFilmmakers"
+    url = "/filmmakers/"
     weight = 1
-  [[es.menu.main]]
-    identifier = "elements"
-    name = "Elementos"
-    url = "/es/elementos/"
+  [[en.menu.main]]
+    identifier = "podcast"
+    name = "podcast"
+    url = "/podcast/"
     weight = 2
+
+#[es]
+#  languageName = "Español"
+#  title = "Massively - Versión Español"
+#  contentDir = "content/es"
+#  weight = 2
+# [[es.menu.main]]
+#   identifier = "generic"
+#   name = "Genérica"
+#   url = "/es/generica/"
+#   weight = 1
+# [[es.menu.main]]
+#   identifier = "elements"
+#   name = "Elementos"
+#   url = "/es/elementos/"
+#   weight = 2
   
 # [fr]
 #   languageName = "Français"
