@@ -1,19 +1,56 @@
-{{ define "main" }}
-  <main aria-role="main">
-    <header class="homepage-header">
-      <h1>{{ .Title }}</h1>
-      {{ with .Params.subtitle }}
-      <span class="subtitle">{{ . }}</span>
-      {{ end }}
-    </header>
-    <div class="homepage-content">
-      <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
-      {{ .Content }}
-    </div>
-    <div>
-      {{ range first 10 .Site.RegularPages }}
-          {{ .Render "summary" }}
-      {{ end }}
-    </div>
-  </main>
-{{ end }}
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang='{{ .Site.Language.Lang | default "en-us" }}'>
+	<head>
+		{{ partial "head/metadata" . }}
+		{{ partial "head/css" . }}
+		{{ partial "head/rss" . }}
+		{{ partial "head/scripts" . }}
+		{{ template "_internal/opengraph.html" . }}
+		{{ template "_internal/twitter_cards.html" . }}
+	</head>
+	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-preload">		
+		{{ $postPerPage := .Site.Params.Posts.pageSize | default 6 }}
+		{{ $featuredPostEnabled := .Site.Params.Posts.featuredPost | default true }}
+		{{ $folderName :=  .Site.Params.Posts.folderName | default "posts" }}
+		{{ $allPosts := where .Site.RegularPages "Section" $folderName }}
+		{{ $remainingPosts := slice }}
+		{{ $featuredPost := slice }}
+		
+		{{ if $featuredPostEnabled }}
+			{{ $featuredPost = index (first 1 $allPosts) 0 }}
+			{{ $remainingPosts = (.Paginate (after 1 $allPosts) $postPerPage) }}
+		{{ else }}
+			{{ $remainingPosts = .Paginate $allPosts $postPerPage }}
+		{{ end }}
+
+		{{ $isFirstPage := eq $remainingPosts.PageNumber 1 }}
+		<!-- Wrapper -->
+		<div id="wrapper" class="fade-in">
+			{{ if $isFirstPage }}
+				{{ partial "header/intro" . }}
+			{{ end }}
+			
+			{{ partial "header/site-header" . }}
+			{{ partial "header/site-nav" . }}
+		
+			<!-- Main -->
+			<div id="main">
+				{{ if and $featuredPost $isFirstPage }}
+					{{ partial "posts/featured.html" $featuredPost }}
+				{{ end }}
+				
+				{{ partial "posts/list.html" $remainingPosts.Pages }}
+				{{ partial "posts/pagination.html" (dict "paginator" $remainingPosts  "outer" . )}}
+			</div>
+			
+			{{ partial "footer/site-footer" . }}
+			{{ partial "footer/copyright" . }}
+		</div>
+		{{ template "_internal/google_analytics.html" . }}
+	</body>
+</html>
