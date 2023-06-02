@@ -37,15 +37,14 @@
 			
 			{{ partial "header/site-header" . }}
 			{{ partial "header/site-nav" . }}
-		
+			
 			<!-- Main -->
 			<div id="main">
-				{{ if and $featuredPost $isFirstPage }}
-					{{ partial "posts/featured.html" $featuredPost }}
-				{{ end }}
-				
-				{{ partial "posts/list.html" $remainingPosts.Pages }}
-				{{ partial "posts/pagination.html" (dict "paginator" $remainingPosts  "outer" . )}}
+				<section class="post">
+					<h1>{{.Title}}</h1>
+					<div class="image main"><img src="{{ . }}">
+					<p> {{.Content}} </p>
+				</section>
 			</div>
 			
 			{{ partial "footer/site-footer" . }}
