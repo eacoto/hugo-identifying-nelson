@@ -1,0 +1,7 @@
+{{ $excerpt := "" }}
+{{ if .Description }}
+	{{ $excerpt = .Description }}
+{{ else }}
+	{{ $excerpt = .Summary }}
+{{ end }}
+{{ return $excerpt }}

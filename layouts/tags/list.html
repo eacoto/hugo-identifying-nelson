@@ -1,0 +1,18 @@
+{{ define "main" }}
+	<header class="major">
+		<h1>{{.Title}}</h1>
+	</header>	
+	<!-- Tags -->
+	<section class="posts">
+		{{ range $tag := .Pages.ByTitle }}
+		  <article>
+			  <header>
+				  <h2><a href="{{ .Permalink }}">{{ .Title }} ({{ len .Pages}})</a></h2>
+			  </header>
+			  <ul class="actions special">
+				  <li><a href="{{ .Permalink }}" class="button">{{ i18n "TAG_TEXT" (len .Pages) }}</a></li>
+			  </ul>
+		  </article>
+		{{ end }}
+	</section>
+{{ end }}

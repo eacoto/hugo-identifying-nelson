@@ -1,0 +1,16 @@
+<!-- Featured Post -->
+<article class="post featured">
+    <header class="major">
+        {{ with .Date }}
+        <span class="date">{{ .Format ($.Site.Params.DateFormat | default "January 2, 2006") }}</span>
+        {{ end }}
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p>{{ partial "posts/excerpt" . }}</p>
+    </header>
+    {{ with partial "posts/imgURL" . }}
+    <a href="{{ $.Permalink }}" class="image main"><img src="{{ . }}" alt="" /></a>
+    {{ end }}
+    <ul class="actions special">
+        <li><a href="{{ .Permalink }}" class="button big">{{ i18n "LINK_TEXT" }}</a></li>
+    </ul>
+</article>

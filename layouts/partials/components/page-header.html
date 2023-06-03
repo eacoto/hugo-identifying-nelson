@@ -1,0 +1,15 @@
+<!-- Page Header -->
+<header class="major">
+  {{ with .PublishDate }}
+    <span class="date">{{ .Format ($.Site.Params.DateFormat | default "January 2, 2006") }}</span>
+  {{ end }}
+  <h2>{{with .Params.DisplayTitle}}{{.}}{{else}}{{.Title}}{{end}}</h2>
+  <p>{{with .Params.DisplayDescription}}{{.}}{{else}}{{.Description}}{{end}}</p>
+  {{ if .Params.image }}
+  <div class="image main">
+    <a href="{{ .Params.image | relURL }}" data-lightbox="feature-image" data-title="{{ .Params.imageTitle }}">
+      <img src="{{ .Params.image | relURL }}" alt="" />
+    </a>
+  </div>
+  {{ end }}
+</header>

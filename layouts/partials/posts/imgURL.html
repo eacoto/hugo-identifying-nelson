@@ -1,0 +1,7 @@
+{{ $headerURL := "" }}
+{{ if .Params.image }}
+  {{ $headerURL = (.Params.image | relURL) }}
+{{ else if .Resources.GetMatch "header" }}
+  {{ $headerURL = (.Resources.GetMatch "header").Permalink }}
+{{ end }}
+{{ return $headerURL }}

@@ -1,0 +1,6 @@
+{{ define "main" }}
+	<header class="major">
+		  <h1><a href="{{.Parent.Permalink}}">{{ .Title }}</a></h1>
+	</header>	
+	{{ partial "posts/list.html" .Pages}}
+{{ end }}

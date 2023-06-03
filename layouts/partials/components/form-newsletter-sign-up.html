@@ -1,0 +1,32 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.contactinfo.contactformaction }}
+<section id="subscribe">
+  <header>
+    <h2>{{ i18n "CONTACT_FORM_HEADER" . }}</h2>
+    <p>{{ i18n "CONTACT_FORM_TEASER" . }}</p>
+  </header>
+  <form id="signup-form" method="post" action="{{ . }}" data-botpoison-public-key="pk_dd2eb71b-ac8a-4772-b8d0-02eed0d0f626" target="_blank">
+    <input type="hidden" name="page" value="{{ $.Page.RelPermalink }}" />
+    <input type="hidden" name="component" value="footer-form" />
+    <div class="fields">
+      <div class="field">
+        <label for="name">{{ i18n "CONTACT_FORM_FIELD_NAME" . }}</label>
+        <input type="text" name="name" id="name" required/>
+      </div>
+      <div class="field">
+        <label for="email">{{ i18n "CONTACT_FORM_FIELD_EMAIL" . }}</label>
+        <input type="text" name="email" id="email" required/>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="footer-newsletter" name="newsletter" value="Yes">
+        <label for="footer-newsletter">Subscribe to my bimonthly newsletter as well.<br /><a href="{{ relref $.Page $.Site.Params.learnMoreLink }}">Learn more.</a></label>
+      </div>
+    </div>
+    <ul class="actions">
+      <li>
+        <button id="submit" type="submit" class="primary">{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" . }}</button>
+      </li>
+    </ul>
+  </form>
+</section>
+{{ end }}
