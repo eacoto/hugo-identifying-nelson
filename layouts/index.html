@@ -7,13 +7,13 @@
 <html lang='{{ .Site.Language.Lang | default "en-us" }}'>
 	<head>
 		{{ partial "head/metadata" . }}
+		{{ partial "head/favicons" . }}
 		{{ partial "head/css" . }}
 		{{ partial "head/rss" . }}
 		{{ partial "head/scripts" . }}
 		{{ template "_internal/opengraph.html" . }}
-		{{ template "_internal/twitter_cards.html" . }}
 	</head>
-	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-preload">		
+	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-preload">
 		{{ $postPerPage := .Site.Params.Posts.pageSize | default 6 }}
 		{{ $featuredPostEnabled := .Site.Params.Posts.featuredPost | default true }}
 		{{ $folderName :=  .Site.Params.Posts.folderName | default "posts" }}
@@ -27,7 +27,7 @@
 		{{ else }}
 			{{ $remainingPosts = .Paginate $allPosts $postPerPage }}
 		{{ end }}
-
+			
 		{{ $isFirstPage := eq $remainingPosts.PageNumber 1 }}
 		<!-- Wrapper -->
 		<div id="wrapper" class="fade-in">
@@ -37,19 +37,26 @@
 			
 			{{ partial "header/site-header" . }}
 			{{ partial "header/site-nav" . }}
-			
+
 			<!-- Main -->
 			<div id="main">
-				<section class="post">
-					<h1>{{.Title}}</h1>
-					<div class="image main"><img src="{{ . }}">
-					<p> {{.Content}} </p>
-				</section>
+				<article class="post">
+					{{ partial "components/page-header" .}}
+					
+					{{ .Content }}
+
+					{{ partial "postcustom" . }}					
+				</article>
+				
+				{{ if and $featuredPost $isFirstPage }}
+					{{/* partial "posts/featured.html" $featuredPost */}}
+				{{ end }}
+				
+				{{/* partial "posts/list.html" $remainingPosts.Pages */}}
 			</div>
-			
+
 			{{ partial "footer/site-footer" . }}
 			{{ partial "footer/copyright" . }}
 		</div>
-		{{ template "_internal/google_analytics.html" . }}
 	</body>
 </html>

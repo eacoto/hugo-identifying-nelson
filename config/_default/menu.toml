@@ -2,6 +2,11 @@
 # For sections the name/directory must match the menu .Identifier
 
 [[main]]
+  identifier = "theFilm"
+  name = "TheFilmmakers"
+  url = "content/en/"
+  weight = 1
+[[main]]
   identifier = "Filmmakers"
   name = "TheFilmmakers"
   url = "/filmmakers/"
