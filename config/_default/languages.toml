@@ -17,18 +17,18 @@
 [es]
   languageName = "Español"
   title = "Massively - Versión Español"
-  contentDir = "content/es"
+  contentDir = "content/en"
   weight = 2
  [[es.menu.main]]
    identifier = "generic"
-   name = "ElDocumental"
-   url = "/es/generica/"
-   weight = 2
+   name = "LosCreadores"
+   url = "/filmmakers/"
+   weight = 1
  [[es.menu.main]]
    identifier = "elements"
-   name = "LosCreadores"
-   url = "/es/elementos/"
-   weight = 2
+   name = "LaTravesia"
+   url = "/podcast/"
+   weight = 3
   
 # [fr]
 #   languageName = "Français"
